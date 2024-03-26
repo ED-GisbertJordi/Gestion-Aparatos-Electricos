@@ -3,7 +3,7 @@ package electrodomesticos;
 /**
  * @author Jordi Gisbert y Jean Marc 
  */
-public class electrodomestico {
+public class Electrodomestico {
     
     private int numeroSerie;
     private static final int precioBase = 100;
