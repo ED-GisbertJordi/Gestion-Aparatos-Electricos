@@ -33,6 +33,11 @@ public class Electrodomestico {
         };
     }
     
+    @Override
+    public String toString() {
+        return "";
+    }
+    
 }
 
 enum Color {blanco,negro,rojo,azul,gris}

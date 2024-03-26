@@ -15,5 +15,8 @@ public class Computador extends AparatoElectrico{
         this.tamañoDisco = tamañoDisco;
     }
     
-    
+    @Override
+    public String toString() {
+        return "";
+    }
 }

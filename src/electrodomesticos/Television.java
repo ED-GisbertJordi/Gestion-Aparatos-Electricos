@@ -20,5 +20,9 @@ public class Television extends Electrodomestico{
         return (this.resoluciónPulgadas>=40)? super.obtenerPrecioVenta()*1.3: super.obtenerPrecioVenta();
     }
     
+    @Override
+    public String toString() {
+        return "";
+    }
 
 }

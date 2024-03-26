@@ -11,5 +11,9 @@ public class Lavadora extends Electrodomestico{
         super(numeroSerie, marca, modelo, color, claseEnergia);
     }
 
+    @Override
+    public String toString() {
+        return "";
+    }
 
 }

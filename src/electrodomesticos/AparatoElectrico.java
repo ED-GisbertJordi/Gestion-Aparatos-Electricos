@@ -18,7 +18,10 @@ public class AparatoElectrico {
     }
     
     
-    
+    @Override
+    public String toString() {
+        return "";
+    }
     
     
 }

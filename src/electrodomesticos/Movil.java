@@ -11,6 +11,10 @@ public class Movil extends AparatoElectrico{
         this.memoriaInterna = memoriaInterna;
     }
 
+    @Override
+    public String toString() {
+        return "";
+    }
     
 }
 
