@@ -17,7 +17,7 @@ public class Movil extends Dispositivo{
 
     @Override
     public String toString() {
-        return "";
+        return super.toString()+"Memoria: "+this.memoriaInterna+", Marca: "+this.marca+", Modelo: "+this.modelo;
     }
     
     
@@ -25,37 +25,37 @@ public class Movil extends Dispositivo{
         Gb64  {
             @Override
             public String toString() {
-                return "";
+                return "64Gb";
             }
         }, 
         Gb128  {
             @Override
             public String toString() {
-                return "";
+                return "128Gb";
             }
         }, 
         Gb256 {
             @Override
             public String toString() {
-                return "";
+                return "256Gb";
             }
         }, 
         Gb512 {
             @Override
             public String toString() {
-                return "";
+                return "512Gb";
             }
         }, 
         Tb1 {
             @Override
             public String toString() {
-                return "";
+                return "1Tb";
             }
         }, 
         Tb2 {
             @Override
             public String toString() {
-                return "2GB";
+                return "2Tb";
             }
         }
     }

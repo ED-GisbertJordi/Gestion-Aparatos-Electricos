@@ -23,7 +23,7 @@ public class Television extends Electrodomestico{
     }
     
     private String getEstadoInternet(){
-        return (this.estaWifiHabilitado)?"Conectado a Internet, ": "No conectado a Internet, ";
+        return (this.estaConectadaAInternet)?"Conectado a Internet, ": "No conectado a Internet, ";
     }
     
     @Override

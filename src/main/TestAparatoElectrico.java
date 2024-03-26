@@ -45,6 +45,6 @@ public class TestAparatoElectrico {
             new Movil("1234H", Movil.MemoriaInterna.Gb512, "Iphone", "21")
         };
 
-        System.out.println(aparatos[2]);
+        System.out.println(aparatos[aparatos.length-1]);
     }
 }
