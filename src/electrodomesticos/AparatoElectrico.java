@@ -11,4 +11,17 @@ public abstract class AparatoElectrico {
     public AparatoElectrico(String numeroSerie) {
         this.numeroSerie = numeroSerie;
     }
+    
+    private String getCorriente(){
+        return (this.tieneCorreinteElecctrica)?" (Con corriente eléctrica), ": " (Sin corriente eléctrica), ";
+    }
+    
+    private String getEncendido(){
+        return (this.estaEncendido)?"Está encendido, ": "No está encendido, ";
+    }
+    
+    @Override
+    public String toString() {
+        return "["+getClass().getSimpleName()+"] Núm.Serie: "+this.numeroSerie+getCorriente()+getEncendido(); 
+    }
 }

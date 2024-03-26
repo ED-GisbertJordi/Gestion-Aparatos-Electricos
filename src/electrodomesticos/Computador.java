@@ -8,7 +8,7 @@ public class Computador extends Dispositivo{
     private double velocidadCPU;
     private int tamañoDisco;
 
-    public Computador(int memoriaRAM, double velocidadCPU, int tamañoDisco, String numeroSerie) {
+    public Computador(String numeroSerie, int memoriaRAM, double velocidadCPU, int tamañoDisco) {
         super(numeroSerie);
         this.memoriaRAM = memoriaRAM;
         this.velocidadCPU = velocidadCPU;

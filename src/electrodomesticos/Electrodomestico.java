@@ -4,7 +4,7 @@ package electrodomesticos;
  * @author Jordi Gisbert y Jean Marc 
  */
 public abstract class Electrodomestico extends AparatoElectrico{
-    private Color color = Color.blanco;
+    private Color color = Color.BLANCO;
     private ClaseEnergia claseEnergia = ClaseEnergia.F;
     private static final int precioBase = 100;
     private String marca;
@@ -30,10 +30,11 @@ public abstract class Electrodomestico extends AparatoElectrico{
     
     @Override
     public String toString() {
-        return "";
+        return super.toString()+"Marca: "+this.marca+", Modelo: '"+this.modelo+"', Tipo Consumo: "+this.claseEnergia+", Color: "+this.color+
+                ", Precio Base: "+Electrodomestico.precioBase+", Precio Final: "+this.obtenerPrecioVenta(); 
     }
     
 }
 
-enum Color {blanco,negro,rojo,azul,gris}
+enum Color {BLANCO,NEGRO,ROJO,AZUL,GRIS}
 enum ClaseEnergia { A,B,C,D,E,F}

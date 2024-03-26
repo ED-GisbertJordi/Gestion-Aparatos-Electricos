@@ -8,7 +8,7 @@ public class Movil extends Dispositivo{
     private String marca;
     private String modelo;
 
-    public Movil(MemoriaInterna memoriaInterna, String numeroSerie, String marca, String modelo) {
+    public Movil(String numeroSerie, MemoriaInterna memoriaInterna, String marca, String modelo) {
         super(numeroSerie);
         this.memoriaInterna = memoriaInterna;
         this.marca = marca;
@@ -20,47 +20,48 @@ public class Movil extends Dispositivo{
         return "";
     }
     
-}
-
-enum MemoriaInterna {
     
-    Mb64  {
-        @Override
-        public String toString() {
-            return "";
-        }
-    }, 
-    Mb128  {
-        @Override
-        public String toString() {
-            return "";
-        }
-    }, 
-    Mb256 {
-        @Override
-        public String toString() {
-            return "";
-        }
-    }, 
-    Mb512 {
-        @Override
-        public String toString() {
-            return "";
-        }
-    }, 
-    Gb1 {
-        @Override
-        public String toString() {
-            return "";
-        }
-    }, 
-    Gb2 {
-        @Override
-        public String toString() {
-            return "2GB";
+    public enum MemoriaInterna {
+        Gb64  {
+            @Override
+            public String toString() {
+                return "";
+            }
+        }, 
+        Gb128  {
+            @Override
+            public String toString() {
+                return "";
+            }
+        }, 
+        Gb256 {
+            @Override
+            public String toString() {
+                return "";
+            }
+        }, 
+        Gb512 {
+            @Override
+            public String toString() {
+                return "";
+            }
+        }, 
+        Tb1 {
+            @Override
+            public String toString() {
+                return "";
+            }
+        }, 
+        Tb2 {
+            @Override
+            public String toString() {
+                return "2GB";
+            }
         }
     }
-
-
-
+    
+    
+    
 }
+
+

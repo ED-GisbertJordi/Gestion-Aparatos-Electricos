@@ -12,7 +12,19 @@ public class Television extends Electrodomestico{
     public Television(String numeroSerie, String marca, String modelo) {
         super(numeroSerie, marca, modelo);
     }
+    
+    public Television(String numeroSerie, String marca, String modelo, double resoluciónPulgadas) {
+        super(numeroSerie, marca, modelo);
+        this.resoluciónPulgadas = resoluciónPulgadas;
+    }
 
+    private String getEstadoWifi(){
+        return (this.estaWifiHabilitado)?"Wifi habilitado, ": "Wifi deshabilitado, ";
+    }
+    
+    private String getEstadoInternet(){
+        return (this.estaWifiHabilitado)?"Conectado a Internet, ": "No conectado a Internet, ";
+    }
     
     @Override
     public double obtenerPrecioVenta(){
@@ -21,7 +33,7 @@ public class Television extends Electrodomestico{
     
     @Override
     public String toString() {
-        return "";
+        return super.toString()+", "+this.getEstadoWifi()+getEstadoInternet()+"Resolución: "+this.resoluciónPulgadas;
     }
 
 }
