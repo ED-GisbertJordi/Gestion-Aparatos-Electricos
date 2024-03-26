@@ -3,13 +3,13 @@ package electrodomesticos;
 /**
  * @author Jordi Gisbert y Jean Marc 
  */
-public class Computador extends AparatoElectrico{
+public class Computador extends Dispositivo{
     private int memoriaRAM;
     private double velocidadCPU;
-    private double tamañoDisco;
+    private int tamañoDisco;
 
-    public Computador(int memoriaRAM, double velocidadCPU, double tamañoDisco, int numeroSerie, String marca, String modelo) {
-        super(numeroSerie, marca, modelo);
+    public Computador(int memoriaRAM, double velocidadCPU, int tamañoDisco, String numeroSerie) {
+        super(numeroSerie);
         this.memoriaRAM = memoriaRAM;
         this.velocidadCPU = velocidadCPU;
         this.tamañoDisco = tamañoDisco;

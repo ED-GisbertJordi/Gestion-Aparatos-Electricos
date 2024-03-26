@@ -3,23 +3,18 @@ package electrodomesticos;
 /**
  * @author Jordi Gisbert y Jean Marc 
  */
-public class Electrodomestico {
-    
-    private int numeroSerie;
+public abstract class Electrodomestico extends AparatoElectrico{
+    private Color color = Color.blanco;
+    private ClaseEnergia claseEnergia = ClaseEnergia.F;
     private static final int precioBase = 100;
     private String marca;
     private String modelo;
-    private Color color = Color.blanco;
-    private ClaseEnergia claseEnergia = ClaseEnergia.F;
     private double pesoKg = 5;
-    
-    
-    public Electrodomestico(int numeroSerie, String marca, String modelo, Color color, ClaseEnergia claseEnergia) {
-        this.numeroSerie = numeroSerie;
+
+    public Electrodomestico(String numeroSerie, String marca, String modelo) {
+        super(numeroSerie);
         this.marca = marca;
         this.modelo = modelo;
-        this.color = color;
-        this.claseEnergia = claseEnergia;
     }
     
     public double obtenerPrecioVenta(){
