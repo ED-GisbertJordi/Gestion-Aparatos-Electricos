@@ -14,7 +14,7 @@ public class Electrodomestico {
     private double pesoKg = 5;
     
     
-    public electrodomestico(int numeroSerie, String marca, String modelo, Color color, ClaseEnergia claseEnergia) {
+    public Electrodomestico(int numeroSerie, String marca, String modelo, Color color, ClaseEnergia claseEnergia) {
         this.numeroSerie = numeroSerie;
         this.marca = marca;
         this.modelo = modelo;
@@ -23,7 +23,7 @@ public class Electrodomestico {
     }
     
     private double obtenerPrecioVenta(){
-        return electrodomestico.precioBase + switch (this.claseEnergia) {
+        return Electrodomestico.precioBase + switch (this.claseEnergia) {
             case A -> 100;
             case B -> 80;
             case C -> 60;
