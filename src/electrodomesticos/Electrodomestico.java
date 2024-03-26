@@ -22,7 +22,7 @@ public class Electrodomestico {
         this.claseEnergia = claseEnergia;
     }
     
-    private double obtenerPrecioVenta(){
+    public double obtenerPrecioVenta(){
         return Electrodomestico.precioBase + switch (this.claseEnergia) {
             case A -> 100;
             case B -> 80;
