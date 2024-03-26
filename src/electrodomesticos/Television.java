@@ -14,14 +14,11 @@ public class Television extends Electrodomestico{
         super(numeroSerie, marca, modelo, color, claseEnergia);
     }
 
-    /*
-    private double obtenerPrecioVenta(){
-        
-        
-        
-        
-        return super.obtenerPrecioVenta()+();
+    
+    @Override
+    public double obtenerPrecioVenta(){
+        return (this.resoluciónPulgadas>=40)? super.obtenerPrecioVenta()*1.3: super.obtenerPrecioVenta();
     }
-    */
+    
 
 }
