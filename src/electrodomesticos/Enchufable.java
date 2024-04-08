@@ -1,7 +1,7 @@
 package electrodomesticos;
 
 /**
- * @author Jordi Gisbert Ferriz
+ * @author Jordi Gisbert Ferriz y Jean Marc 
  */
 public interface Enchufable {
     void darEnergia();
