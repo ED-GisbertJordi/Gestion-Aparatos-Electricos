@@ -36,4 +36,14 @@ public class Television extends Electrodomestico{
         return super.toString()+", "+this.getEstadoWifi()+getEstadoInternet()+"Resolución: "+this.resoluciónPulgadas;
     }
 
+    @Override
+    public void darEnergia() {
+
+    }
+
+    @Override
+    public void quitarEnergia() {
+
+    }
+
 }

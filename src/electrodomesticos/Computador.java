@@ -19,4 +19,14 @@ public class Computador extends Dispositivo{
     public String toString() {
         return super.toString()+"RAM: "+this.memoriaRAM+", Velocidad CPU: "+this.velocidadCPU+", Tamaño HD: "+this.tamañoDisco;
     }
+
+    @Override
+    public void darEnergia() {
+
+    }
+
+    @Override
+    public void quitarEnergia() {
+
+    }
 }

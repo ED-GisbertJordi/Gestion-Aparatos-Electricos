@@ -19,6 +19,16 @@ public class Movil extends Dispositivo{
     public String toString() {
         return super.toString()+"Memoria: "+this.memoriaInterna+", Marca: "+this.marca+", Modelo: "+this.modelo;
     }
+
+    @Override
+    public void darEnergia() {
+        
+    }
+
+    @Override
+    public void quitarEnergia() {
+    
+    }
     
     
     public enum MemoriaInterna {
