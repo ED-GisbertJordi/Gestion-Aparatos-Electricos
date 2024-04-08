@@ -3,7 +3,7 @@ package electrodomesticos;
 /**
  * @author Jordi Gisbert y Jean Marc 
  */
-public abstract class AparatoElectrico {
+public abstract class AparatoElectrico implements Enchufable{
     protected String numeroSerie;
     protected boolean estaEncendido = false;
     protected boolean tieneCorreinteElecctrica = false;
