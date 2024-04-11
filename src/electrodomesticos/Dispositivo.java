@@ -32,16 +32,20 @@ public abstract class Dispositivo extends AparatoElectrico implements Conectable
         System.out.println("[" + getClass().getSimpleName() + "]  Aparato apagado");
     }
 
+    @Override
     public boolean sePermiteConexion() {
-        return false;
+        return estaEncendido;
     }
 
+    @Override
     public void establecerConexion() {
+        conectadoInternet = true;
 
     }
 
+    @Override
     public void quitaConexion() {
-
+        conectadoInternet = false;
     }
 
 }

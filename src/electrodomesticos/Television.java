@@ -3,7 +3,7 @@ package electrodomesticos;
 /**
  * @author Jordi Gisbert y Jean Marc 
  */
-public class Television extends Electrodomestico implements Encendible{
+public class Television extends Electrodomestico implements Conectable, Encendible{
     private boolean estaWifiHabilitado = false;
     private boolean estaConectadaAInternet = false;
     private double resoluciónPulgadas = 20;
@@ -54,6 +54,25 @@ public class Television extends Electrodomestico implements Encendible{
          }else{
             System.out.println("[Televisión] No se puede apagar (no hay corriente)");
         }
+    }
+
+    @Override
+    public boolean sePermiteConexion() {
+        return tieneCorrienteElectrica && estaEncendido && estaWifiHabilitado;
+    }
+
+    @Override
+    public void establecerConexion() {
+        if (tieneCorrienteElectrica && estaEncendido && estaWifiHabilitado) {
+            estaConectadaAInternet = true;
+         }
+    }
+
+    @Override
+    public void quitaConexion() {
+        if (tieneCorrienteElectrica && estaEncendido && estaWifiHabilitado) {
+            estaConectadaAInternet = false;
+         }
     }
 
     
