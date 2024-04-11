@@ -4,7 +4,7 @@ package electrodomesticos;
  * @author Jordi Gisbert y Jean Marc
  */
 public interface Conectable {
-    boolean sePermiteConexuon();
+    boolean sePermiteConexion();
     void establecerConexion();
     void quitaConexion();
     

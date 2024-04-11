@@ -6,14 +6,14 @@ package electrodomesticos;
 public abstract class AparatoElectrico implements Enchufable{
     protected String numeroSerie;
     protected boolean estaEncendido = false;
-    protected boolean tieneCorreinteElecctrica = false;
+    protected boolean tieneCorreinteElectrica = false;
 
     public AparatoElectrico(String numeroSerie) {
         this.numeroSerie = numeroSerie;
     }
     
     private String getCorriente(){
-        return (this.tieneCorreinteElecctrica)?" (Con corriente eléctrica), ": " (Sin corriente eléctrica), ";
+        return (this.tieneCorreinteElectrica)?" (Con corriente eléctrica), ": " (Sin corriente eléctrica), ";
     }
     
     private String getEncendido(){
@@ -27,11 +27,19 @@ public abstract class AparatoElectrico implements Enchufable{
     
     @Override
     public void darEnergia() {
-        tieneCorreinteElecctrica = true;
+        tieneCorreinteElectrica = true;
     }
 
     @Override
     public void quitarEnergia() {
-        tieneCorreinteElecctrica = false;
+        tieneCorreinteElectrica = false;
     }
+    
+    @Override
+    public boolean equals(Object ob) {
+        AparatoElectrico a = (AparatoElectrico) ob;
+        return a.numeroSerie.equals(this.numeroSerie);
+    }
+    
+    
 }

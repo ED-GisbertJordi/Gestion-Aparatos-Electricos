@@ -19,7 +19,7 @@ public abstract class Dispositivo extends AparatoElectrico implements Conectable
         return super.toString()+this.getEstadoInternet(); 
     }
     
-    public boolean sePermiteConexuon(){
+    public boolean sePermiteConexion(){
         return false;
     }
     

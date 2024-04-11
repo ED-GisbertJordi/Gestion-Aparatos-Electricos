@@ -38,8 +38,8 @@ public class Television extends Electrodomestico implements Encendible{
 
     @Override
     public void activar() {
-        if (tieneCorreinteElecctrica) {
-            super.estaEncendido = true;
+        if (tieneCorreinteElectrica) {
+            estaEncendido = true;
          }
     }
 
