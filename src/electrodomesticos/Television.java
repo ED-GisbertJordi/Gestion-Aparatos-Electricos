@@ -38,13 +38,16 @@ public class Television extends Electrodomestico implements Encendible{
 
     @Override
     public void activar() {
-        if (tieneCorreinteElectrica) {
+        if (tieneCorrienteElectrica) {
             estaEncendido = true;
-         }
+            System.out.println("[Televisión] Aparato encendido");
+         }else{
+            System.out.println("[Televisión] No se puede encender (no hay corriente)");
+        }
     }
 
     @Override
-    public void descarivar() {
+    public void desactivar() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 

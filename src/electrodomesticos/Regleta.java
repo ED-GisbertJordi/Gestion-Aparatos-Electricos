@@ -47,7 +47,7 @@ public class Regleta {
         return false;
     }
 
-    public int obtenetNumeroTomasLibres() {
+    public int obtenerNumeroTomasLibres() {
         int tomasLibres = 0;
         for (Enchufable toma : aparatos) {
             if (toma == null) {
@@ -58,9 +58,10 @@ public class Regleta {
     }
 
     public void listarConectados() {
+        System.out.println("----------Listar aparatos enchufados----------");
         for (Enchufable toma : aparatos) {
             if (toma == null) {
-                break;
+                continue;
             }
             System.out.println(toma);
         }

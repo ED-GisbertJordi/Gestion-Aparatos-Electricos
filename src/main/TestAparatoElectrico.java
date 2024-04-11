@@ -18,6 +18,10 @@ public class TestAparatoElectrico {
             new Movil("1234H", Movil.MemoriaInterna.Gb512, "Iphone", "21")
         };
 
-        System.out.println(aparatos[aparatos.length-1]);
+        System.out.println("----------Listar aparatos enchufados----------");
+        for (AparatoElectrico aparato : aparatos) {
+            System.out.println(aparato);
+        }
+        
     }
 }

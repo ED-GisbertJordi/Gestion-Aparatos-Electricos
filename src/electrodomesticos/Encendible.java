@@ -5,7 +5,7 @@ package electrodomesticos;
  */
 public interface Encendible extends Enchufable{
     void activar();
-    void descarivar();
+    void desactivar();
     
     
 }
