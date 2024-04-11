@@ -3,7 +3,7 @@ package electrodomesticos;
 /**
  * @author Jordi Gisbert y Jean Marc 
  */
-public class Television extends Electrodomestico{
+public class Television extends Electrodomestico implements Encendible{
     private boolean estaWifiHabilitado = false;
     private boolean estaConectadaAInternet = false;
     private double resoluciónPulgadas = 20;
@@ -37,13 +37,17 @@ public class Television extends Electrodomestico{
     }
 
     @Override
-    public void darEnergia() {
-
+    public void activar() {
+        if (tieneCorreinteElecctrica) {
+            super.estaEncendido = true;
+         }
     }
 
     @Override
-    public void quitarEnergia() {
-
+    public void descarivar() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    
+    
 }

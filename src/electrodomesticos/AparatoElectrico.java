@@ -24,4 +24,14 @@ public abstract class AparatoElectrico implements Enchufable{
     public String toString() {
         return "["+getClass().getSimpleName()+"] Núm.Serie: "+this.numeroSerie+getCorriente()+getEncendido(); 
     }
+    
+    @Override
+    public void darEnergia() {
+        tieneCorreinteElecctrica = true;
+    }
+
+    @Override
+    public void quitarEnergia() {
+        tieneCorreinteElecctrica = false;
+    }
 }

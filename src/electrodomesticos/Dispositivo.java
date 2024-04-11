@@ -3,7 +3,7 @@ package electrodomesticos;
 /**
  * @author Jordi Gisbert y Jean Marc 
  */
-public abstract class Dispositivo extends AparatoElectrico{
+public abstract class Dispositivo extends AparatoElectrico implements Conectable{
     private boolean conectadoInternet = false;
 
     public Dispositivo(String numeroSerie) {
@@ -18,5 +18,19 @@ public abstract class Dispositivo extends AparatoElectrico{
     public String toString() {
         return super.toString()+this.getEstadoInternet(); 
     }
+    
+    public boolean sePermiteConexuon(){
+        return false;
+    }
+    
+    
+    public void establecerConexion(){
+        
+    }
+    
+    public void quitaConexion(){
+        
+    }
+    
     
 }

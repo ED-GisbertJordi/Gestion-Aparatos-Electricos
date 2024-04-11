@@ -1,4 +1,4 @@
-package electrodomesticos;
+    package electrodomesticos;
 
 /**
  * @author Jordi Gisbert Ferriz
@@ -8,9 +8,9 @@ public class Regleta{
     
     public boolean enchufar(AparatoElectrico aparato) {
         for (int i = 0; i < aparatos.length; i++) {
-            if (aparatos[i].equals(null)) {
+            if (aparatos[i] == null) {
                 aparatos[i] = aparato;
-                darEnergia();
+                aparatos[i].darEnergia();
                 return true;
             }
         }
@@ -20,7 +20,7 @@ public class Regleta{
     public boolean desenchufar(AparatoElectrico aparato) {
         for (int i = 0; i < aparatos.length; i++) {
             if (aparatos[i].equals(aparato)) {
-//                quitarEnergia();
+                aparatos[i].quitarEnergia();
                 aparatos[i] = null;
                 return true;
             }
@@ -28,23 +28,23 @@ public class Regleta{
         return  false;
     }
     
-    public void darEnergia() {
-        for (Enchufable aparato : aparatos) {
-            AparatoElectrico a = (AparatoElectrico) aparato;
-            a.tieneCorreinteElecctrica = true;
+    public int obtenetNumeroTomasLibres() {
+        int tomasLibres = 0;
+        for (Enchufable toma : aparatos) {
+            if (toma == null) {
+                tomasLibres++;
+            }
         }
-    }
-
-    public void quitarEnergia(int numeroEnchufe) {
-        
-    }
-    
-    public void obtenetNumeroTomasLibres() {
-        
+        return tomasLibres;
     }
     
     public void listarConectados() {
-        
+        for (Enchufable toma : aparatos) {
+            if (toma == null) {
+                break;
+            }
+            System.out.println(toma);
+        }
     }
 
 

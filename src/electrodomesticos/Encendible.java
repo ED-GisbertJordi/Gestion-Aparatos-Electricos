@@ -1,7 +1,7 @@
 package electrodomesticos;
 
 /**
- * @author Jordi Gisbert Ferriz
+ * @author Jordi Gisbert y Jean Marc 
  */
 public interface Encendible extends Enchufable{
     void activar();
