@@ -13,6 +13,14 @@ public class Television extends Electrodomestico implements Conectable, Encendib
         super(numeroSerie, marca, modelo);
     }
     
+    public void habilitarWifi(){
+        estaWifiHabilitado = true;
+    }
+    
+    public void deshabilitarWifi(){
+        estaWifiHabilitado = false;
+    }
+    
     public Television(String numeroSerie, String marca, String modelo, double resoluciónPulgadas) {
         super(numeroSerie, marca, modelo);
         this.resoluciónPulgadas = resoluciónPulgadas;
@@ -70,9 +78,7 @@ public class Television extends Electrodomestico implements Conectable, Encendib
 
     @Override
     public void quitaConexion() {
-        if (tieneCorrienteElectrica && estaEncendido && estaWifiHabilitado) {
-            estaConectadaAInternet = false;
-         }
+        estaConectadaAInternet = false;
     }
 
     

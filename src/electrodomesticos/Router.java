@@ -62,6 +62,9 @@ public class Router extends AparatoElectrico {
 
     public void listarDispositivosEmparejados() {
         for (Conectable conexion : conexiones) {
+            if (conexion == null) {
+                continue;
+            }
             System.out.println(conexion);
         }
     }
@@ -71,7 +74,7 @@ public class Router extends AparatoElectrico {
             if (conexion == null) {
                 continue;
             }
-            if (conexion.sePermiteConexion()) {
+            if (!conexion.sePermiteConexion()) {
                 this.desemparejar(conexion);
             }
         }
