@@ -3,7 +3,8 @@ package electrodomesticos;
 /**
  * @author Jordi Gisbert y Jean Marc
  */
-public class Router extends AparatoElectrico {
+public class Router extends AparatoElectrico implements Encendible {
+
     Conectable[] conexiones = new Conectable[5];
 
     public Router(String numeroSerie) {
@@ -11,73 +12,124 @@ public class Router extends AparatoElectrico {
     }
 
     public boolean emparejar(Conectable aparato) {
-        if (aparatoExistente(aparato)) {
-            return false;
-        }
-        for (int i = 0; i < conexiones.length; i++) {
-            if (conexiones[i] == null) {
-                conexiones[i] = aparato;
-                conexiones[i].establecerConexion();
-                return true;
+
+        if (estaEncendido()) {
+            if (aparatoExistente(aparato)) {
+                return false;
             }
+            for (int i = 0; i < conexiones.length; i++) {
+                if (conexiones[i] == null) {
+                    conexiones[i] = aparato;
+                    conexiones[i].establecerConexion();
+                    return true;
+                }
+            }
+        } else {
+            System.out.println(getClass().getSimpleName() + " no esta disponible (sin corriente o no encendido)");
         }
         return false;
     }
 
     private boolean aparatoExistente(Conectable aparato) {
-        for (Conectable a : conexiones) {
-            if (a == null) {
-                continue;
+
+        if (estaEncendido()) {
+            for (Conectable a : conexiones) {
+                if (a == null) {
+                    continue;
+                }
+                if (a.equals(aparato)) {
+                    return true;
+                }
             }
-            if (a.equals(aparato)) {
-                return true;
-            }
+        } else {
+            System.out.println(getClass().getSimpleName() + " no esta disponible (sin corriente o no encendido)");
         }
         return false;
     }
 
     public boolean desemparejar(Conectable aparato) {
-        for (int i = 0; i < conexiones.length; i++) {
-            if (conexiones[i] == null) {
-                continue;
+
+        if (estaEncendido()) {
+            for (int i = 0; i < conexiones.length; i++) {
+                if (conexiones[i] == null) {
+                    continue;
+                }
+                if (aparato.equals(conexiones[i])) {
+                    conexiones[i].quitaConexion();
+                    conexiones[i] = null;
+                    return true;
+                }
             }
-            if (aparato.equals(conexiones[i])) {
-                conexiones[i].quitaConexion();
-                conexiones[i] = null;
-                return true;
-            }
+        } else {
+            System.out.println(getClass().getSimpleName() + " no esta disponible (sin corriente o no encendido)");
         }
         return false;
     }
 
     public int obtenerNumeroDeDispositivosEmparejados() {
-        int contador = 0;
-        for (Conectable conexion : conexiones) {
-            if (conexion != null) {
-                contador++;
+
+        if (estaEncendido()) {
+            int contador = 0;
+            for (Conectable conexion : conexiones) {
+                if (conexion != null) {
+                    contador++;
+                }
             }
+            return contador;
+        } else {
+            System.out.println(getClass().getSimpleName() + " no esta disponible (sin corriente o no encendido)");
+            return -1;
         }
-        return contador;
+
     }
 
     public void listarDispositivosEmparejados() {
-        for (Conectable conexion : conexiones) {
-            if (conexion == null) {
-                continue;
+
+        if (estaEncendido()) {
+            for (Conectable conexion : conexiones) {
+                if (conexion == null) {
+                    continue;
+                }
+                System.out.println(conexion);
             }
-            System.out.println(conexion);
+        } else {
+            System.out.println(getClass().getSimpleName() + " no esta disponible (sin corriente o no encendido)");
         }
+
     }
 
     public void actualizarDispositivosEmparejados() {
-        for (Conectable conexion : conexiones) {
-            if (conexion == null) {
-                continue;
+        if (estaEncendido()) {
+            for (Conectable conexion : conexiones) {
+                if (conexion == null) {
+                    continue;
+                }
+                if (!conexion.sePermiteConexion()) {
+                    this.desemparejar(conexion);
+                }
             }
-            if (!conexion.sePermiteConexion()) {
-                this.desemparejar(conexion);
-            }
+        } else {
+            System.out.println(getClass().getSimpleName() + " no esta disponible (sin corriente o no encendido)");
         }
+
+    }
+
+    private boolean estaEncendido() {
+        return tieneCorrienteElectrica && estaEncendido;
+    }
+
+    @Override
+    public void activar() {
+        if (tieneCorrienteElectrica) {
+            estaEncendido = true;
+        } else {
+            System.out.println("[" + getClass().getSimpleName() + "] no tiene corriente electrica");
+        }
+    }
+
+    @Override
+    public void desactivar() {
+        estaEncendido = false;
     }
 
 }
