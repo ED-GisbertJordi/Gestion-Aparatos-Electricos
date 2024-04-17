@@ -14,13 +14,13 @@ public class TestRouter {
 
         System.out.println("----------Aparatos conectables creados ----------\n" + television + "\n" + computadora + "\n" + movil);
 
-        System.out.println("----------Encender televisión, móvil y ordenador ----------");
+        System.out.println("\n----------Encender televisión, móvil y ordenador----------\n");
 
         television.activar();
         computadora.activar();
         movil.activar();
 
-        System.out.println("-----------Conectar televisión a una regleta y encender la TV ----------");
+        System.out.println("\n-----------Conectar televisión a una regleta y encender la TV----------\n");
         Regleta regleta = new Regleta();
 
         if (regleta.enchufar(television)) {
@@ -32,7 +32,7 @@ public class TestRouter {
         television.activar();
         television.habilitarWifi();
 
-        System.out.println("-----------Crear router y emparejar los tres aparatos. Televisión no podrá por no tener habilitado Wifi----------");
+        System.out.println("\n-----------Crear router y emparejar los tres aparatos. Televisión no podrá por no tener habilitado Wifi----------\n");
         Router internet = new Router("1234C");
 
         if (internet.emparejar(television)) {
@@ -53,14 +53,14 @@ public class TestRouter {
             System.out.println("[Móvil] No se ha podido establecer la conexión");
         }
 
-        System.out.println("----------Habilitar Wifi para televisión y emparejar con router ----");
+        System.out.println("\n----------Habilitar Wifi para televisión y emparejar con router----\n");
         if (!internet.emparejar(television)) {
             System.out.println("[Televisión] Aparato emparejado con éxito");
         } else {
             System.out.println("[Televisión] No se ha podido establecer la conexión (sin corriente, apagado o la interfaz wifi no está habilitada)");
         }
 
-        System.out.println("----------Desemparejar móvil y mostrar los aparatos emparejados ----------");
+        System.out.println("\n----------Desemparejar móvil y mostrar los aparatos emparejados ----------\n");
         if (internet.desemparejar(movil)) {
             System.out.println("[Móvil]Aparato desemparejado con éxito");
         } else {
@@ -69,7 +69,7 @@ public class TestRouter {
 
         internet.listarDispositivosEmparejados();
 
-        System.out.println("----------Desenchufar televisión y listar aparatos emparejados ----------");
+        System.out.println("\n----------Desenchufar televisión y listar aparatos emparejados ----------\n");
         if (!regleta.desenchufar(television)) {
             System.out.println("[Televisión] Aparato desenchufado");
         } else {
