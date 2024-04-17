@@ -26,10 +26,7 @@ public class Router extends AparatoElectrico {
 
     private boolean aparatoExistente(Conectable aparato) {
         for (Conectable a : conexiones) {
-            if (a == null) {
-                continue;
-            }
-            if (a.equals(aparato)) {
+            if (a != null&&a.equals(aparato)) {
                 return true;
             }
         }
@@ -38,10 +35,7 @@ public class Router extends AparatoElectrico {
 
     public boolean desemparejar(Conectable aparato) {
         for (int i = 0; i < conexiones.length; i++) {
-            if (conexiones[i] == null) {
-                continue;
-            }
-            if (aparato.equals(conexiones[i])) {
+            if (conexiones[i] != null&&aparato.equals(conexiones[i])) {
                 conexiones[i].quitaConexion();
                 conexiones[i] = null;
                 return true;
@@ -62,19 +56,15 @@ public class Router extends AparatoElectrico {
 
     public void listarDispositivosEmparejados() {
         for (Conectable conexion : conexiones) {
-            if (conexion == null) {
-                continue;
+            if (conexion != null) {
+                System.out.println(conexion);
             }
-            System.out.println(conexion);
         }
     }
 
     public void actualizarDispositivosEmparejados() {
         for (Conectable conexion : conexiones) {
-            if (conexion == null) {
-                continue;
-            }
-            if (!conexion.sePermiteConexion()) {
+            if (conexion != null && !conexion.sePermiteConexion()) {
                 this.desemparejar(conexion);
             }
         }
