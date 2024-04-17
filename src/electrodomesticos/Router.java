@@ -34,10 +34,7 @@ public class Router extends AparatoElectrico implements Encendible {
 
         if (estaEncendido()) {
             for (Conectable a : conexiones) {
-                if (a == null) {
-                    continue;
-                }
-                if (a.equals(aparato)) {
+                if (a != null&&a.equals(aparato)) {
                     return true;
                 }
             }
@@ -51,10 +48,7 @@ public class Router extends AparatoElectrico implements Encendible {
 
         if (estaEncendido()) {
             for (int i = 0; i < conexiones.length; i++) {
-                if (conexiones[i] == null) {
-                    continue;
-                }
-                if (aparato.equals(conexiones[i])) {
+                if (conexiones[i] != null&&aparato.equals(conexiones[i])) {
                     conexiones[i].quitaConexion();
                     conexiones[i] = null;
                     return true;
@@ -87,10 +81,9 @@ public class Router extends AparatoElectrico implements Encendible {
 
         if (estaEncendido()) {
             for (Conectable conexion : conexiones) {
-                if (conexion == null) {
-                    continue;
+                if (conexion != null) {
+                    System.out.println(conexion);
                 }
-                System.out.println(conexion);
             }
         } else {
             System.out.println(getClass().getSimpleName() + " no esta disponible (sin corriente o no encendido)");
@@ -101,10 +94,7 @@ public class Router extends AparatoElectrico implements Encendible {
     public void actualizarDispositivosEmparejados() {
         if (estaEncendido()) {
             for (Conectable conexion : conexiones) {
-                if (conexion == null) {
-                    continue;
-                }
-                if (!conexion.sePermiteConexion()) {
+                if (conexion != null&&!conexion.sePermiteConexion()) {
                     this.desemparejar(conexion);
                 }
             }
@@ -122,6 +112,7 @@ public class Router extends AparatoElectrico implements Encendible {
     public void activar() {
         if (tieneCorrienteElectrica) {
             estaEncendido = true;
+            System.out.println("[" + getClass().getSimpleName() + "] Aparato encendido");
         } else {
             System.out.println("[" + getClass().getSimpleName() + "] no tiene corriente electrica");
         }
